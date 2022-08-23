@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>topbanner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .TopBanner {
+            padding: 0;
+            background: #ddd;
+            overflow: hidden;
+            height: 100px;
+            /* auto 와 0 인 상태는 중간 단계가 없어서 transition이 안된다. */
+            transition: 0.5s;
+        }
+
+        .TopBanner.on {
+            height: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="TopBanner">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, expedita!</p>
+        <a href="#">more</a>
+        <!-- 리액트는 싱글 페이지??? 이기 때문에 어디로 가라는 태그는 link to 를 사용한다. -->
+    </div>
+    <button>닫기</button>
+
+    <script>
+        document.querySelector('button').addEventListener('click', function () {
+            document.querySelector('.TopBanner').classList.toggle('on')
+        })
+    </script>
+</body>
+
+</html>
